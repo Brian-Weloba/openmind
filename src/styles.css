@@ -2,8 +2,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-oup-blue: #212e50;
-  --color-oup-light-blue: #0F6CB6;
+  --color-primary: #1e3a5f;
+  --color-primary-dark: #2d4a6f;
+  --color-accent: #ffc107;
+  --color-golden: #ffb300;
 
   --font-family-sans: 'Open Sans', system-ui, sans-serif;
   --font-family-serif: 'DM Serif Display', serif;

@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
       next: (data) => {
         this.wordOfTheDay.set(data);
         this.loading.set(false);
-        console.log(data)
       },
       error: (err) => {
         this.error.set('Failed to load word of the day');
