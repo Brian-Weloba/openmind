@@ -1,5 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { WordnikService } from '../../services/wordnik.service';
 import { WordOfTheDay } from '../../models/word-of-the-day.interface';
