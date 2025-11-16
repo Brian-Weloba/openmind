@@ -1,14 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@theme {
+  --color-oup-blue: #002147;
+  --color-oup-light-blue: #0F6CB6;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --font-family-sans: 'Inter', system-ui, sans-serif;
 }
 
 body {
