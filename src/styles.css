@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-oup-blue: #002147;
+  --color-oup-blue: #212e50;
   --color-oup-light-blue: #0F6CB6;
 
-  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-sans: 'Open Sans', system-ui, sans-serif;
+  --font-family-serif: 'DM Serif Display', serif;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

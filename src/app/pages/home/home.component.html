@@ -1,175 +1,395 @@
-<!-- Hero Section -->
-<section class="bg-gradient-to-r from-oup-blue to-oup-light-blue text-white py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Hero Section - Enhanced with gradient and better visual hierarchy -->
+<section class="relative bg-gradient-to-br from-[#1e3a5f] via-[#2d4a6f] to-[#1e3a5f] text-white py-24 overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 right-20 w-96 h-96 bg-[#ffc107] rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-20 w-80 h-80 bg-[#ffb300] rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+      <!-- Logo placeholder - replace with actual logo -->
+      <div class="mb-8 flex justify-center">
+        <div class="text-6xl font-bold tracking-tight">
+          <span class="text-white">Open</span><span class="text-[#ffc107]">Mind</span>
+        </div>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
         OpenMind Publishing
       </h1>
-      <p class="text-xl md:text-2xl mb-4 font-light">
-        Africa's Inclusive Hub for Learning and Innovation in Publishing
-      </p>
-      <p class="text-2xl md:text-3xl font-semibold text-yellow-300 mb-8">
-        Ideas Spark Revolutions!
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      
+      <div class="max-w-3xl mx-auto mb-8">
+        <p class="text-2xl md:text-3xl mb-4 font-light text-gray-100">
+          Africa's Inclusive Hub for Learning and Innovation
+        </p>
+        <p class="text-xl md:text-2xl font-semibold text-[#ffc107] italic">
+          Ideas Spark Revolutions!
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
         <a
           routerLink="/self-publishing"
-          class="bg-white text-oup-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          class="bg-[#ffc107] text-[#1e3a5f] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#ffb300] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           Publish Your Book
         </a>
         <a
           routerLink="/school-publishing"
-          class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-oup-blue transition-colors"
+          class="bg-transparent border-2 border-[#ffc107] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc107] hover:text-[#1e3a5f] transform hover:scale-105 transition-all duration-300"
         >
           School Resources
         </a>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Who We Are -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-oup-blue mb-6 text-center">
-      Who We Are
-    </h2>
-    <p class="text-lg text-gray-700 text-center max-w-4xl mx-auto">
-      OpenMind Publishing is Africa's inclusive hub for learning and innovation in publishing.
-      We blend technology, collaboration and storytelling to produce meaningful works that
-      educate, inspire and transform lives.
-    </p>
+  
+  <!-- Wave separator -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 80C1200 80 1320 70 1380 65L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+    </svg>
   </div>
 </section>
 
-<!-- What We Do -->
-<section class="py-16 bg-gray-50">
+<!-- Word of the Day - Redesigned with yellow accent -->
+<section class="py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-oup-blue mb-12 text-center">
-      What We Do
-    </h2>
+    <div class="max-w-4xl mx-auto">
+      @if (loading()) {
+        <div class="text-center">
+          <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-[#ffc107] border-t-transparent"></div>
+          <p class="mt-4 text-gray-600 text-lg">Loading word of the day...</p>
+        </div>
+      } @else if (error()) {
+        <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6">
+          <p class="text-red-700 font-semibold">{{ error() }}</p>
+        </div>
+      } @else if (wordOfTheDay()) {
+        <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-10 border-t-4 border-[#ffc107] relative overflow-hidden">
+          <!-- Decorative corner accent -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-[#ffc107] opacity-10 rounded-bl-full"></div>
+          
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-8">
+              <div>
+                <span class="inline-block bg-[#1e3a5f] text-white px-4 py-2 rounded-full text-sm font-semibold mb-2">
+                  Daily Feature
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1e3a5f]">Word of the Day</h2>
+              </div>
+              <span class="text-sm text-gray-500 font-medium">{{ wordOfTheDay()!.publishDate | date }}</span>
+            </div>
+
+            <div class="mb-8 bg-white rounded-xl p-8 shadow-md">
+              <h3 class="text-5xl md:text-6xl font-bold text-[#1e3a5f] mb-3 font-serif">
+                {{ wordOfTheDay()!.word }}
+              </h3>
+              @if (wordOfTheDay()!.definitions.length > 0) {
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-sm font-semibold text-[#ffc107] bg-[#ffc107]/10 px-3 py-1 rounded-full">
+                    {{ wordOfTheDay()!.definitions[0].partOfSpeech }}
+                  </span>
+                </div>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                  {{ wordOfTheDay()!.definitions[0].text }}
+                </p>
+              }
+            </div>
+
+            @if (wordOfTheDay()!.note) {
+              <div class="bg-gradient-to-r from-[#ffb300]/10 to-[#ffc107]/10 border-l-4 border-[#ffb300] rounded-lg p-6 mb-8">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-[#ffb300] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                  </svg>
+                  <p class="text-gray-700">
+                    <span class="font-bold text-[#1e3a5f]">Note:</span> {{ wordOfTheDay()!.note }}
+                  </p>
+                </div>
+              </div>
+            }
+
+            @if (wordOfTheDay()!.examples.length > 0) {
+              <div class="border-t-2 border-gray-200 pt-8">
+                <h4 class="font-bold text-[#1e3a5f] mb-4 text-lg flex items-center gap-2">
+                  <svg class="w-5 h-5 text-[#ffc107]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                  </svg>
+                  Example Usage
+                </h4>
+                <div class="bg-[#1e3a5f] rounded-xl p-6 text-white">
+                  <p class="text-lg italic leading-relaxed mb-3">
+                    "{{ wordOfTheDay()!.examples[0].text }}"
+                  </p>
+                  @if (wordOfTheDay()!.examples[0].title) {
+                    <p class="text-sm text-[#ffc107] font-medium">
+                      — {{ wordOfTheDay()!.examples[0].title }}
+                    </p>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Who We Are - Enhanced design -->
+<section class="py-20 bg-gradient-to-br from-[#1e3a5f]/5 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-[#ffc107] text-[#1e3a5f] px-6 py-2 rounded-full text-sm font-bold mb-4 tracking-wide">
+        ABOUT US
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6">
+        Who We Are
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-[#ffc107] to-[#ffb300] mx-auto mb-8"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xl text-gray-700 text-center leading-relaxed">
+        OpenMind Publishing is Africa's inclusive hub for learning and innovation in publishing.
+        We blend technology, collaboration and storytelling to produce meaningful works that
+        educate, inspire and transform lives.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do - Cards redesigned with new colors -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block bg-[#ffc107] text-[#1e3a5f] px-6 py-2 rounded-full text-sm font-bold mb-4 tracking-wide">
+        OUR SERVICES
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6">
+        What We Do
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-[#ffc107] to-[#ffb300] mx-auto"></div>
+    </div>
+    
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- School Publishing -->
-      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-        <div class="w-16 h-16 bg-oup-light-blue rounded-full flex items-center justify-center mb-6">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-          </svg>
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-[#ffc107]">
+        <div class="p-8">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg class="w-10 h-10 text-[#ffc107]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#1e3a5f] mb-4 group-hover:text-[#ffc107] transition-colors">
+            School Publishing
+          </h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Engaging, curriculum-aligned educational resources for learners from PP1 to Grade 12.
+          </p>
+          <a
+            routerLink="/school-publishing"
+            class="inline-flex items-center gap-2 text-[#1e3a5f] font-bold hover:text-[#ffc107] transition-colors group"
+          >
+            Learn More 
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
         </div>
-        <h3 class="text-xl font-bold text-oup-blue mb-4">School Publishing</h3>
-        <p class="text-gray-600 mb-6">
-          Engaging, curriculum-aligned educational resources for learners from PP1 to Grade 12.
-        </p>
-        <a
-          routerLink="/school-publishing"
-          class="text-oup-light-blue font-semibold hover:underline"
-        >
-          Learn More →
-        </a>
+        <div class="h-2 bg-gradient-to-r from-[#ffc107] to-[#ffb300] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
       </div>
 
       <!-- Self-Publishing -->
-      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-        <div class="w-16 h-16 bg-oup-light-blue rounded-full flex items-center justify-center mb-6">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-          </svg>
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-[#ffc107]">
+        <div class="p-8">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg class="w-10 h-10 text-[#ffc107]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#1e3a5f] mb-4 group-hover:text-[#ffc107] transition-colors">
+            Self-Publishing Services
+          </h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Empowering authors to publish professionally and credibly under the OpenMind Publishing banner.
+          </p>
+          <a
+            routerLink="/self-publishing"
+            class="inline-flex items-center gap-2 text-[#1e3a5f] font-bold hover:text-[#ffc107] transition-colors group"
+          >
+            Learn More 
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
         </div>
-        <h3 class="text-xl font-bold text-oup-blue mb-4">Self-Publishing Services</h3>
-        <p class="text-gray-600 mb-6">
-          Empowering authors to publish professionally and credibly under the OpenMind Publishing banner.
-        </p>
-        <a
-          routerLink="/self-publishing"
-          class="text-oup-light-blue font-semibold hover:underline"
-        >
-          Learn More →
-        </a>
+        <div class="h-2 bg-gradient-to-r from-[#ffc107] to-[#ffb300] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
       </div>
 
       <!-- Magazine -->
-      <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-        <div class="w-16 h-16 bg-oup-light-blue rounded-full flex items-center justify-center mb-6">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-          </svg>
+      <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-[#ffc107]">
+        <div class="p-8">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg class="w-10 h-10 text-[#ffc107]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#1e3a5f] mb-4 group-hover:text-[#ffc107] transition-colors">
+            Lifestyle Magazine
+          </h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Celebrating dreams and resilience with stories that move hearts and inspire action.
+          </p>
+          <a
+            routerLink="/magazine"
+            class="inline-flex items-center gap-2 text-[#1e3a5f] font-bold hover:text-[#ffc107] transition-colors group"
+          >
+            Learn More 
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
         </div>
-        <h3 class="text-xl font-bold text-oup-blue mb-4">Lifestyle Magazine</h3>
-        <p class="text-gray-600 mb-6">
-          Celebrating dreams and resilience with stories that move hearts and inspire action.
-        </p>
-        <a
-          routerLink="/magazine"
-          class="text-oup-light-blue font-semibold hover:underline"
-        >
-          Learn More →
-        </a>
+        <div class="h-2 bg-gradient-to-r from-[#ffc107] to-[#ffb300] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Core Values -->
-<section class="py-16 bg-white">
+<!-- Core Values - Redesigned with yellow accents -->
+<section class="py-20 bg-gradient-to-br from-[#1e3a5f]/5 via-white to-[#ffc107]/5">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl md:text-4xl font-bold text-oup-blue mb-12 text-center">
-      Our Core Values
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-      <div class="text-center">
-        <div class="w-20 h-20 bg-oup-light-blue rounded-full flex items-center justify-center mx-auto mb-4">
-          <span class="text-white text-2xl font-bold">I</span>
+    <div class="text-center mb-16">
+      <span class="inline-block bg-[#ffc107] text-[#1e3a5f] px-6 py-2 rounded-full text-sm font-bold mb-4 tracking-wide">
+        OUR VALUES
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6">
+        Core Values
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-[#ffc107] to-[#ffb300] mx-auto mb-8"></div>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        The principles that guide everything we do at OpenMind Publishing
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div class="text-center group">
+        <div class="relative inline-block mb-6">
+          <div class="w-24 h-24 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+            <span class="text-[#ffc107] text-3xl font-bold">I</span>
+          </div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#ffc107] rounded-lg transform rotate-12"></div>
         </div>
-        <h4 class="font-semibold text-oup-blue mb-2">Inclusivity</h4>
-        <p class="text-sm text-gray-600">Welcoming all voices and perspectives</p>
+        <h4 class="font-bold text-[#1e3a5f] mb-3 text-lg">Inclusivity</h4>
+        <p class="text-gray-600">Welcoming all voices and perspectives</p>
       </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-oup-light-blue rounded-full flex items-center justify-center mx-auto mb-4">
-          <span class="text-white text-2xl font-bold">Q</span>
+      
+      <div class="text-center group">
+        <div class="relative inline-block mb-6">
+          <div class="w-24 h-24 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+            <span class="text-[#ffc107] text-3xl font-bold">Q</span>
+          </div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#ffb300] rounded-lg transform rotate-12"></div>
         </div>
-        <h4 class="font-semibold text-oup-blue mb-2">Quality</h4>
-        <p class="text-sm text-gray-600">Upholding editorial excellence</p>
+        <h4 class="font-bold text-[#1e3a5f] mb-3 text-lg">Quality</h4>
+        <p class="text-gray-600">Upholding editorial excellence</p>
       </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-oup-light-blue rounded-full flex items-center justify-center mx-auto mb-4">
-          <span class="text-white text-2xl font-bold">I</span>
+      
+      <div class="text-center group">
+        <div class="relative inline-block mb-6">
+          <div class="w-24 h-24 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+            <span class="text-[#ffc107] text-3xl font-bold">I</span>
+          </div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#ffc107] rounded-lg transform rotate-12"></div>
         </div>
-        <h4 class="font-semibold text-oup-blue mb-2">Innovation</h4>
-        <p class="text-sm text-gray-600">Using modern tools</p>
+        <h4 class="font-bold text-[#1e3a5f] mb-3 text-lg">Innovation</h4>
+        <p class="text-gray-600">Using modern tools</p>
       </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-oup-light-blue rounded-full flex items-center justify-center mx-auto mb-4">
-          <span class="text-white text-2xl font-bold">C</span>
+      
+      <div class="text-center group">
+        <div class="relative inline-block mb-6">
+          <div class="w-24 h-24 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+            <span class="text-[#ffc107] text-3xl font-bold">C</span>
+          </div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#ffb300] rounded-lg transform rotate-12"></div>
         </div>
-        <h4 class="font-semibold text-oup-blue mb-2">Collaboration</h4>
-        <p class="text-sm text-gray-600">Partnering for innovation</p>
+        <h4 class="font-bold text-[#1e3a5f] mb-3 text-lg">Collaboration</h4>
+        <p class="text-gray-600">Partnering for innovation</p>
       </div>
-      <div class="text-center">
-        <div class="w-20 h-20 bg-oup-light-blue rounded-full flex items-center justify-center mx-auto mb-4">
-          <span class="text-white text-2xl font-bold">A</span>
+      
+      <div class="text-center group">
+        <div class="relative inline-block mb-6">
+          <div class="w-24 h-24 bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+            <span class="text-[#ffc107] text-3xl font-bold">A</span>
+          </div>
+          <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[#ffc107] rounded-lg transform rotate-12"></div>
         </div>
-        <h4 class="font-semibold text-oup-blue mb-2">Accessibility</h4>
-        <p class="text-sm text-gray-600">Knowledge anywhere, anytime</p>
+        <h4 class="font-bold text-[#1e3a5f] mb-3 text-lg">Accessibility</h4>
+        <p class="text-gray-600">Knowledge anywhere, anytime</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-16 bg-oup-blue text-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+<!-- CTA Section - Enhanced with gradient and better styling -->
+<section class="relative py-24 bg-gradient-to-br from-[#1e3a5f] via-[#2d4a6f] to-[#1e3a5f] text-white overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-10 w-72 h-72 bg-[#ffc107] rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-[#ffb300] rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <div class="mb-8">
+      <span class="inline-block bg-[#ffc107] text-[#1e3a5f] px-6 py-2 rounded-full text-sm font-bold mb-6 tracking-wide">
+        GET STARTED
+      </span>
+    </div>
+    
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
       Ready to Share Your Ideas?
     </h2>
-    <p class="text-xl mb-8">
-      Join us in sparking revolutions through the power of publishing.
+    
+    <p class="text-xl md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+      Join us in sparking revolutions through the power of publishing. Let's transform your vision into reality.
     </p>
-    <a
-      routerLink="/contact"
-      class="bg-white text-oup-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-    >
-      Get in Touch
-    </a>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        routerLink="/contact"
+        class="bg-[#ffc107] text-[#1e3a5f] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#ffb300] transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
+      >
+        Get in Touch
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      
+      <a
+        routerLink="/about"
+        class="bg-transparent border-2 border-[#ffc107] text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc107] hover:text-[#1e3a5f] transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2"
+      >
+        Learn More About Us
+      </a>
+    </div>
+    
+    <!-- Stats or trust indicators -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
+      <div class="text-center">
+        <div class="text-4xl font-bold text-[#ffc107] mb-2">100+</div>
+        <div class="text-gray-300">Books Published</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-[#ffc107] mb-2">500+</div>
+        <div class="text-gray-300">Happy Authors</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-[#ffc107] mb-2">50+</div>
+        <div class="text-gray-300">School Partners</div>
+      </div>
+    </div>
   </div>
 </section>
