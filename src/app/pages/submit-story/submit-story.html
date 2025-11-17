@@ -1,0 +1,436 @@
+<!-- Hero Section -->
+<section class="relative bg-linear-to-br from-primary via-primary-dark to-primary text-white py-20 overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-20 w-80 h-80 bg-golden rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center">
+      <span class="inline-block bg-accent text-primary px-6 py-2 rounded-full text-sm font-bold mb-6 tracking-wide">
+        SHARE YOUR VOICE
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Submit Your Story
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
+        Share your experiences, dreams, and insights with our community through OpenMind Magazine
+      </p>
+    </div>
+  </div>
+
+  <!-- Wave separator -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 80C1200 80 1320 70 1380 65L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Success Message -->
+@if (submitted) {
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto bg-linear-to-br from-green-50 to-white rounded-2xl shadow-xl p-10 border-t-4 border-green-500 text-center">
+        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-primary mb-4">Thank You for Sharing!</h2>
+        <p class="text-xl text-gray-700 mb-6">
+          Your story has been successfully submitted. Our editorial team will review it and get back to you within 2-3 weeks.
+        </p>
+        <p class="text-gray-600 mb-8">
+          We've sent a confirmation email to <span class="font-semibold text-primary">{{ story.email }}</span>
+        </p>
+        <div class="flex gap-4 justify-center">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 bg-accent text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-golden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Return to Home
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </a>
+          <a
+            href="/magazine"
+            class="inline-flex items-center gap-2 bg-transparent border-2 border-accent text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-accent hover:text-white transform hover:scale-105 transition-all duration-300"
+          >
+            Read Magazine
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Submission Form -->
+@if (!submitted) {
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Guidelines -->
+        <div class="bg-linear-to-br from-accent/10 to-golden/10 border-l-4 border-accent rounded-lg p-6 mb-12">
+          <h2 class="text-2xl font-bold text-primary mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            Story Submission Guidelines
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+            <div>
+              <h3 class="font-bold text-primary mb-2">We Accept:</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Personal stories of resilience & triumph</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Inspirational journeys & transformations</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Cultural insights & traditions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Life lessons & wisdom</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-primary mb-2">Requirements:</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Word count: 500-2,000 words</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Original, unpublished content</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Well-written and proofread</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Response time: 2-3 weeks</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submission Form -->
+        <form #storyForm="ngForm" (ngSubmit)="onSubmit()" class="space-y-8">
+          <!-- Author Information -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-primary">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-primary font-bold">1</div>
+              Author Information
+            </h3>
+
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="authorName" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="authorName"
+                    name="authorName"
+                    [(ngModel)]="story.authorName"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    placeholder="Your full name"
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="story.email"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    [(ngModel)]="story.phone"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    placeholder="+254 XXX XXX XXX"
+                  />
+                </div>
+
+                <div>
+                  <label for="socialMedia" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Social Media Handle
+                  </label>
+                  <input
+                    type="text"
+                    id="socialMedia"
+                    name="socialMedia"
+                    [(ngModel)]="story.socialMedia"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    placeholder="@yourhandle or profile link"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="bio" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Brief Bio <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="bio"
+                  name="bio"
+                  [(ngModel)]="story.bio"
+                  required
+                  rows="3"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+                  placeholder="Tell us about yourself in 2-3 sentences (50-150 words)"
+                ></textarea>
+                <p class="text-sm text-gray-500 mt-2">This may be published with your story</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Details -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-accent">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-primary font-bold">2</div>
+              Story Details
+            </h3>
+
+            <div class="space-y-6">
+              <div>
+                <label for="storyTitle" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Story Title <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="storyTitle"
+                  name="storyTitle"
+                  [(ngModel)]="story.storyTitle"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="Give your story a compelling title"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="storyCategory" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Category <span class="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="storyCategory"
+                    name="storyCategory"
+                    [(ngModel)]="story.storyCategory"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  >
+                    <option value="">Select a category</option>
+                    <option value="resilience">Resilience & Triumph</option>
+                    <option value="inspiration">Inspiration & Hope</option>
+                    <option value="culture">Culture & Tradition</option>
+                    <option value="education">Education & Learning</option>
+                    <option value="community">Community & Social Impact</option>
+                    <option value="entrepreneurship">Entrepreneurship</option>
+                    <option value="arts">Arts & Creativity</option>
+                    <option value="lifestyle">Lifestyle & Wellness</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="wordCount" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Approximate Word Count <span class="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="wordCount"
+                    name="wordCount"
+                    [(ngModel)]="story.wordCount"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  >
+                    <option value="">Select range</option>
+                    <option value="500-1000">500-1,000 words</option>
+                    <option value="1000-1500">1,000-1,500 words</option>
+                    <option value="1500-2000">1,500-2,000 words</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="storyContent" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Your Story <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="storyContent"
+                  name="storyContent"
+                  [(ngModel)]="story.storyContent"
+                  required
+                  rows="20"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-y font-mono text-sm"
+                  placeholder="Paste or type your story here (500-2,000 words)...
+
+Share your journey, your experiences, and what makes your story unique. Be authentic, be honest, and let your voice shine through."
+                ></textarea>
+                <p class="text-sm text-gray-500 mt-2">Write in your authentic voice - we celebrate diverse perspectives and storytelling styles</p>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">
+                  Has this story been published elsewhere? <span class="text-red-500">*</span>
+                </label>
+                <div class="flex gap-6">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="previouslyPublished"
+                      value="no"
+                      [(ngModel)]="story.previouslyPublished"
+                      class="w-4 h-4 text-accent focus:ring-accent"
+                    />
+                    <span class="text-gray-700">No, this is original content</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="previouslyPublished"
+                      value="yes"
+                      [(ngModel)]="story.previouslyPublished"
+                      class="w-4 h-4 text-accent focus:ring-accent"
+                    />
+                    <span class="text-gray-700">Yes</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-golden">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-golden rounded-lg flex items-center justify-center text-primary font-bold">3</div>
+              Additional Notes
+            </h3>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                Anything else you'd like to share?
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                [(ngModel)]="story.message"
+                rows="4"
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+                placeholder="Any additional context, photo suggestions, or notes for our editorial team..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <button
+              type="submit"
+              [disabled]="!storyForm.valid"
+              class="bg-linear-to-r from-accent to-golden text-primary px-12 py-4 rounded-lg font-bold text-lg hover:from-golden hover:to-accent transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none inline-flex items-center gap-3"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+              Submit Your Story
+            </button>
+            <p class="text-sm text-gray-500">
+              <span class="text-red-500">*</span> Required fields
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Why Share Section -->
+<section class="py-20 bg-linear-to-br from-primary/5 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-primary mb-6">
+        Why Share Your Story?
+      </h2>
+      <div class="w-24 h-1 bg-linear-to-r from-accent to-golden mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Amplify Your Voice</h3>
+        <p class="text-gray-600">Reach thousands of readers and make your story heard across Africa</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Inspire Others</h3>
+        <p class="text-gray-600">Your experiences can motivate and empower others facing similar journeys</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Professional Platform</h3>
+        <p class="text-gray-600">Get published in a respected magazine with editorial support and quality presentation</p>
+      </div>
+    </div>
+  </div>
+</section>

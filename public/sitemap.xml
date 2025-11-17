@@ -68,6 +68,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Submit Story -->
+  <url>
+    <loc>https://openmindpublishing.co.ke/submit-story</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://openmindpublishing.co.ke/privacy</loc>

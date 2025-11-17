@@ -34,6 +34,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/partner-with-us/partner-with-us').then(m => m.PartnerWithUs)
   },
   {
+    path: 'submit-story',
+    loadComponent: () => import('./pages/submit-story/submit-story').then(m => m.SubmitStory)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
