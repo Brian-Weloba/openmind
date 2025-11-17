@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "/openmind": {},
+    "/openmind/about": {},
+    "/openmind/contact": {},
+    "/openmind/magazine": {},
+    "/openmind/partner-with-us": {},
+    "/openmind/school-publishing": {},
+    "/openmind/self-publishing": {},
+    "/openmind/submit-manuscript": {},
+    "/openmind/submit-story": {}
+  }
+}
