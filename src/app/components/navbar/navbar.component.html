@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <div class="shrink-0">
-        <a routerLink="/" class="flex items-center space-x-3 group">
+        <a routerLink="/" href="/" class="flex items-center space-x-3 group">
           <img
             src="/logo_2.png"
             alt="OpenMind Publishing Logo"
@@ -23,6 +23,7 @@
         <div class="ml-10 flex items-baseline space-x-2">
           <a
             routerLink="/"
+            href="/"
             routerLinkActive="bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg"
             [routerLinkActiveOptions]="{exact: true}"
             class="px-5 py-2.5 rounded-lg text-sm font-semibold text-primary hover:bg-linear-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 transform hover:scale-105"
@@ -31,6 +32,7 @@
           </a>
           <a
             routerLink="/about"
+            href="/about"
             routerLinkActive="bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg"
             class="px-5 py-2.5 rounded-lg text-sm font-semibold text-primary hover:bg-linear-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 transform hover:scale-105"
           >
@@ -38,6 +40,7 @@
           </a>
           <a
             routerLink="/school-publishing"
+            href="/school-publishing"
             routerLinkActive="bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg"
             class="px-5 py-2.5 rounded-lg text-sm font-semibold text-primary hover:bg-linear-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 transform hover:scale-105"
           >
@@ -45,6 +48,7 @@
           </a>
           <a
             routerLink="/self-publishing"
+            href="/self-publishing"
             routerLinkActive="bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg"
             class="px-5 py-2.5 rounded-lg text-sm font-semibold text-primary hover:bg-linear-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 transform hover:scale-105"
           >
@@ -52,6 +56,7 @@
           </a>
           <a
             routerLink="/magazine"
+            href="/magazine"
             routerLinkActive="bg-gradient-to-r from-primary to-primary-dark text-white shadow-lg"
             class="px-5 py-2.5 rounded-lg text-sm font-semibold text-primary hover:bg-linear-to-r hover:from-primary hover:to-primary-dark hover:text-white transition-all duration-300 transform hover:scale-105"
           >
@@ -59,6 +64,7 @@
           </a>
           <a
             routerLink="/contact"
+            href="/contact"
             routerLinkActive="bg-accent text-primary shadow-lg"
             class="px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-linear-to-r from-accent to-golden hover:from-golden hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
           >
@@ -113,6 +119,7 @@
     <div class="px-4 pt-3 pb-4 space-y-2 bg-linear-to-br from-primary to-primary-dark border-t-4 border-accent">
       <a
         routerLink="/"
+        href="/"
         routerLinkActive="bg-accent text-primary font-bold shadow-lg"
         [routerLinkActiveOptions]="{exact: true}"
         (click)="closeMenu()"
@@ -127,6 +134,7 @@
       </a>
       <a
         routerLink="/about"
+        href="/about"
         routerLinkActive="bg-accent text-primary font-bold shadow-lg"
         (click)="closeMenu()"
         class="block px-4 py-3 rounded-lg text-base font-semibold text-white hover:bg-white/10 transition-all duration-300"
@@ -140,6 +148,7 @@
       </a>
       <a
         routerLink="/school-publishing"
+        href="/school-publishing"
         routerLinkActive="bg-accent text-primary font-bold shadow-lg"
         (click)="closeMenu()"
         class="block px-4 py-3 rounded-lg text-base font-semibold text-white hover:bg-white/10 transition-all duration-300"
@@ -153,6 +162,7 @@
       </a>
       <a
         routerLink="/self-publishing"
+        href="/self-publishing"
         routerLinkActive="bg-accent text-primary font-bold shadow-lg"
         (click)="closeMenu()"
         class="block px-4 py-3 rounded-lg text-base font-semibold text-white hover:bg-white/10 transition-all duration-300"
@@ -166,6 +176,7 @@
       </a>
       <a
         routerLink="/magazine"
+        href="/magazine"
         routerLinkActive="bg-accent text-primary font-bold shadow-lg"
         (click)="closeMenu()"
         class="block px-4 py-3 rounded-lg text-base font-semibold text-white hover:bg-white/10 transition-all duration-300"
@@ -179,6 +190,7 @@
       </a>
       <a
         routerLink="/contact"
+        href="/contact"
         routerLinkActive="bg-white text-primary font-bold shadow-lg"
         (click)="closeMenu()"
         class="block px-4 py-3 rounded-lg text-base font-bold bg-linear-to-r from-accent to-golden text-primary hover:from-golden hover:to-accent transition-all duration-300 mt-4 text-center shadow-lg"
