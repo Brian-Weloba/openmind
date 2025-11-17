@@ -52,6 +52,22 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Submit Manuscript -->
+  <url>
+    <loc>https://openmindpublishing.co.ke/submit-manuscript</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Partner With Us -->
+  <url>
+    <loc>https://openmindpublishing.co.ke/partner-with-us</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://openmindpublishing.co.ke/privacy</loc>

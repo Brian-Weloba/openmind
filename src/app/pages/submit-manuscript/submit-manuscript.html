@@ -1,0 +1,369 @@
+<!-- Hero Section -->
+<section class="relative bg-linear-to-br from-primary via-primary-dark to-primary text-white py-20 overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-20 right-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-20 w-80 h-80 bg-golden rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center">
+      <span class="inline-block bg-accent text-primary px-6 py-2 rounded-full text-sm font-bold mb-6 tracking-wide">
+        SUBMIT YOUR WORK
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        Submit Your Manuscript
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
+        Share your story with the world. We review every manuscript with care and respond within 4-6 weeks.
+      </p>
+    </div>
+  </div>
+
+  <!-- Wave separator -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 80C1200 80 1320 70 1380 65L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Success Message -->
+@if (submitted) {
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto bg-linear-to-br from-green-50 to-white rounded-2xl shadow-xl p-10 border-t-4 border-green-500 text-center">
+        <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-primary mb-4">Thank You!</h2>
+        <p class="text-xl text-gray-700 mb-6">
+          Your manuscript has been successfully submitted. We'll review it carefully and get back to you within 4-6 weeks.
+        </p>
+        <p class="text-gray-600 mb-8">
+          We've sent a confirmation email to <span class="font-semibold text-primary">{{ manuscript.email }}</span>
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 bg-accent text-primary px-8 py-3 rounded-lg font-bold text-lg hover:bg-golden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Return to Home
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Submission Form -->
+@if (!submitted) {
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Guidelines -->
+        <div class="bg-linear-to-br from-accent/10 to-golden/10 border-l-4 border-accent rounded-lg p-6 mb-12">
+          <h2 class="text-2xl font-bold text-primary mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            Submission Guidelines
+          </h2>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Manuscripts should be complete and professionally edited</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Provide a compelling synopsis (250-500 words)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Include your author bio and platform information</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Response time: 4-6 weeks from submission date</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Submission Form -->
+        <form #manuscriptForm="ngForm" (ngSubmit)="onSubmit()" class="space-y-8">
+          <!-- Author Information Section -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-primary">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-primary font-bold">1</div>
+              Author Information
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="authorName" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="authorName"
+                  name="authorName"
+                  [(ngModel)]="manuscript.authorName"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="manuscript.email"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  [(ngModel)]="manuscript.phone"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="+254 XXX XXX XXX"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Manuscript Details Section -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-accent">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-primary font-bold">2</div>
+              Manuscript Details
+            </h3>
+
+            <div class="space-y-6">
+              <div>
+                <label for="title" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Manuscript Title <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  [(ngModel)]="manuscript.title"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="Enter your manuscript title"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="genre" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Genre <span class="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="genre"
+                    name="genre"
+                    [(ngModel)]="manuscript.genre"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  >
+                    <option value="">Select a genre</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="poetry">Poetry</option>
+                    <option value="children">Children's Literature</option>
+                    <option value="young-adult">Young Adult</option>
+                    <option value="academic">Academic</option>
+                    <option value="biography">Biography/Memoir</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="wordCount" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Word Count <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="number"
+                    id="wordCount"
+                    name="wordCount"
+                    [(ngModel)]="manuscript.wordCount"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                    placeholder="e.g., 75000"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="targetAudience" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Target Audience <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="targetAudience"
+                  name="targetAudience"
+                  [(ngModel)]="manuscript.targetAudience"
+                  required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                  placeholder="e.g., Adults 25-45, Young readers 8-12"
+                />
+              </div>
+
+              <div>
+                <label for="synopsis" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Synopsis <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="synopsis"
+                  name="synopsis"
+                  [(ngModel)]="manuscript.synopsis"
+                  required
+                  rows="8"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+                  placeholder="Provide a compelling synopsis of your manuscript (250-500 words)"
+                ></textarea>
+                <p class="text-sm text-gray-500 mt-2">Aim for 250-500 words</p>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-3">
+                  Has this manuscript been previously published? <span class="text-red-500">*</span>
+                </label>
+                <div class="flex gap-6">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="previouslyPublished"
+                      value="no"
+                      [(ngModel)]="manuscript.previouslyPublished"
+                      class="w-4 h-4 text-accent focus:ring-accent"
+                    />
+                    <span class="text-gray-700">No</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="previouslyPublished"
+                      value="yes"
+                      [(ngModel)]="manuscript.previouslyPublished"
+                      class="w-4 h-4 text-accent focus:ring-accent"
+                    />
+                    <span class="text-gray-700">Yes</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Information Section -->
+          <div class="bg-linear-to-br from-gray-50 to-white rounded-2xl shadow-lg p-8 border-t-4 border-golden">
+            <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+              <div class="w-8 h-8 bg-golden rounded-lg flex items-center justify-center text-primary font-bold">3</div>
+              Additional Information
+            </h3>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                Additional Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                [(ngModel)]="manuscript.message"
+                rows="6"
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
+                placeholder="Tell us anything else you'd like us to know about you or your manuscript..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <button
+              type="submit"
+              [disabled]="!manuscriptForm.valid"
+              class="bg-linear-to-r from-accent to-golden text-primary px-12 py-4 rounded-lg font-bold text-lg hover:from-golden hover:to-accent transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none inline-flex items-center gap-3"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+              Submit Manuscript
+            </button>
+            <p class="text-sm text-gray-500">
+              <span class="text-red-500">*</span> Required fields
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Why Choose Us Section -->
+<section class="py-20 bg-linear-to-br from-primary/5 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-primary mb-6">
+        Why Submit to OpenMind Publishing?
+      </h2>
+      <div class="w-24 h-1 bg-linear-to-r from-accent to-golden mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Professional Review</h3>
+        <p class="text-gray-600">Every manuscript is carefully reviewed by our experienced editorial team</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Fast Turnaround</h3>
+        <p class="text-gray-600">We respond to all submissions within 4-6 weeks</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-linear-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-primary mb-3">Fair Contracts</h3>
+        <p class="text-gray-600">Author-friendly terms with competitive royalty rates</p>
+      </div>
+    </div>
+  </div>
+</section>
